@@ -1,18 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guilhermomasid <guilhermomasid@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 17:52:15 by guilhermoma       #+#    #+#             */
-/*   Updated: 2022/04/29 16:34:45 by guilhermoma      ###   ########.fr       */
+/*   Updated: 2022/04/29 16:44:37 by guilhermoma      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_isalnum(int c)
+int	ft_isascii(int c)
 {
-	return (ft_isalpha(c) || ft_isdigit(c));
+	return (c >= 0 && c <= 127);
 }

@@ -6,7 +6,7 @@
 /*   By: guilhermomasid <guilhermomasid@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 17:10:23 by guilhermoma       #+#    #+#             */
-/*   Updated: 2022/04/29 16:21:53 by guilhermoma      ###   ########.fr       */
+/*   Updated: 2022/04/29 16:40:05 by guilhermoma      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,6 @@
 int	ft_isalpha(int c);
 int	ft_isdigit(int c);
 int	ft_isalnum(int c);
+int	ft_isascii(int c);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: guilhermomasid <guilhermomasid@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/28 16:23:44 by guilhermoma       #+#    #+#              #
-#    Updated: 2022/04/29 16:28:26 by guilhermoma      ###   ########.fr        #
+#    Updated: 2022/04/29 16:37:15 by guilhermoma      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ NAME = libft.a
 SRCS = ft_isalpha.c		\
 		ft_isdigit.c		\
 		ft_isalnum.c		\
+		ft_isascii.c		\
 		# ft_bzero.c		\
 		# ft_memcpy.c		\
 		# ft_memccpy.c		\
@@ -23,7 +24,6 @@ SRCS = ft_isalpha.c		\
 		# ft_memcmp.c		\
 		# ft_strlen.c		\
 		# ft_memset.c 	\
-		# ft_isascii.c		\
 		# ft_isprint.c		\
 		# ft_toupper.c		\
 		# ft_tolower.c		\
