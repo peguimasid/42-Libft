@@ -6,7 +6,7 @@
 /*   By: guilhermomasid <guilhermomasid@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 17:52:10 by guilhermoma       #+#    #+#             */
-/*   Updated: 2022/05/03 12:38:09 by guilhermoma      ###   ########.fr       */
+/*   Updated: 2022/05/03 13:13:10 by guilhermoma      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,9 @@ int	main(void)
 {
 	char	*str;
 
-	str = strdup("meu deus quero ver esse troco");
-	if (!ft_memset((void *)str, 'a', 10))
-	{
-		printf("An error occurred in my_memset()\n");
-	}
-	else
-	{
-		printf("%s\n", str);
-	}
+	str = strdup("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");
+	bzero((void *)str, 50);
+	for (int i = 0; i < 56; i++)
+		printf("%c", str[i]);
+	printf("\n");
 }
