@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guilhermomasid <guilhermomasid@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/28 17:52:10 by guilhermoma       #+#    #+#             */
-/*   Updated: 2022/05/03 12:38:09 by guilhermoma      ###   ########.fr       */
+/*   Created: 2022/05/03 12:28:49 by guilhermoma       #+#    #+#             */
+/*   Updated: 2022/05/03 12:43:45 by guilhermoma      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
-int	main(void)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	char	*str;
+	size_t			i;
+	unsigned char	*tmp;
 
-	str = strdup("meu deus quero ver esse troco");
-	if (!ft_memset((void *)str, 'a', 10))
+	i = 0;
+	tmp = (unsigned char *)b;
+	while (i < len)
 	{
-		printf("An error occurred in my_memset()\n");
+		tmp[i] = c;
+		i++;
 	}
-	else
-	{
-		printf("%s\n", str);
-	}
+	b = tmp;
+	return (b);
 }
