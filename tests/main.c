@@ -6,7 +6,7 @@
 /*   By: guilhermomasid <guilhermomasid@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 17:52:10 by guilhermoma       #+#    #+#             */
-/*   Updated: 2022/05/03 13:13:10 by guilhermoma      ###   ########.fr       */
+/*   Updated: 2022/05/03 14:34:52 by guilhermoma      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,10 @@
 
 int	main(void)
 {
-	char	*str;
+	char	dest[50];
+	void	*result;
 
-	str = strdup("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");
-	bzero((void *)str, 50);
-	for (int i = 0; i < 56; i++)
-		printf("%c", str[i]);
-	printf("\n");
+	result = ft_memcpy((void *)dest, "Hello World!", 5);
+	printf("%s\n", (char *)result);
+	printf("%s\n", dest);
 }

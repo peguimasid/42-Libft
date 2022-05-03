@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guilhermomasid <guilhermomasid@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/28 17:10:23 by guilhermoma       #+#    #+#             */
-/*   Updated: 2022/05/03 14:04:41 by guilhermoma      ###   ########.fr       */
+/*   Created: 2022/05/03 13:50:20 by guilhermoma       #+#    #+#             */
+/*   Updated: 2022/05/03 14:34:22 by guilhermoma      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <stdlib.h>
-# include <unistd.h>
+void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
+{
+	size_t		i;
+	char		*dest_tmp;
+	const char	*src_tmp;
 
-int		ft_isalpha(int c);
-int		ft_isdigit(int c);
-int		ft_isalnum(int c);
-int		ft_isascii(int c);
-int		ft_isprint(int c);
-size_t	ft_strlen(const char *s);
-void	*ft_memset(void *b, int c, size_t len);
-void	ft_bzero(void *s, size_t n);
-void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n);
-
-#endif
+	i = 0;
+	if (dst == src || n == 0)
+		return (dst);
+	if (!dst && !src)
+		return (0);
+	dest_tmp = (char *)dst;
+	src_tmp = (const char *)src;
+	while (i < n)
+	{
+		dest_tmp[i] = src_tmp[i];
+		i++;
+	}
+	return (dst);
+}
