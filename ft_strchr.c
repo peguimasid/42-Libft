@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guilhermomasid <guilhermomasid@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/28 17:52:10 by guilhermoma       #+#    #+#             */
-/*   Updated: 2022/05/04 19:11:34 by guilhermoma      ###   ########.fr       */
+/*   Created: 2022/05/04 18:52:01 by guilhermoma       #+#    #+#             */
+/*   Updated: 2022/05/04 19:10:05 by guilhermoma      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
-#include <ctype.h>
-#include <stdio.h>
-#include <string.h>
-
-int	main(void)
+char	*ft_strchr(const char *s, int c)
 {
-	char	*str;
-	char	*result;
+	int	i;
 
-	str = strdup("bonjour");
-	result = ft_strchr(str, '\0');
-	printf("%s\n", result);
+	i = 0;
+	while (s[i] != '\0')
+	{
+		if (s[i] == c)
+			return ((char *)s + i);
+		i++;
+	}
+	if (s[i] == c)
+		return ((char *)s + i);
 	return (0);
 }
