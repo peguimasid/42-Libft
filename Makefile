@@ -6,7 +6,7 @@
 #    By: guilhermomasid <guilhermomasid@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/28 16:23:44 by guilhermoma       #+#    #+#              #
-#    Updated: 2022/05/04 14:42:50 by guilhermoma      ###   ########.fr        #
+#    Updated: 2022/05/04 15:51:38 by guilhermoma      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ SRCS = ft_isalpha.c		\
 		ft_memcpy.c		\
 		ft_memmove.c 	\
 		ft_strlcpy.c		\
+		ft_strlcat.c		\
 		# ft_memccpy.c		\
 		# ft_memchr.c		\
 		# ft_memcmp.c		\
@@ -31,7 +32,6 @@ SRCS = ft_isalpha.c		\
 		# ft_strchr.c		\
 		# ft_strrchr.c		\
 		# ft_strncmp.c		\
-		# ft_strlcat.c		\
 		# ft_strnstr.c		\
 		# ft_atoi.c		\
 		# ft_calloc.c		\

@@ -6,7 +6,7 @@
 /*   By: guilhermomasid <guilhermomasid@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 17:52:10 by guilhermoma       #+#    #+#             */
-/*   Updated: 2022/05/04 15:02:55 by guilhermoma      ###   ########.fr       */
+/*   Updated: 2022/05/04 18:06:58 by guilhermoma      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,20 @@ int	main(void)
 {
 	char	*src;
 	char	*dest;
-	size_t	result;
+	char	*dest2;
+	size_t	result1;
+	size_t	result2;
+	size_t	size;
 
-	src = strdup("00000");
-	dest = strdup("");
-	result = ft_strlcpy(dest, src, 4);
-	printf("%s\n", dest);
-	printf("%i\n", (int)result);
+	size = 7;
+	src = strdup("dia");
+	dest = strdup("bom");
+	dest2 = strdup("bom");
+	result1 = strlcat(dest, src, size);
+	result2 = ft_strlcat(dest2, src, size);
+	printf("first >>%s\n", dest);
+	printf("first>>%i\n", (int)result1);
+	printf("sec >>%s\n", dest2);
+	printf("sec>>%i\n", (int)result2);
 	return (0);
 }
