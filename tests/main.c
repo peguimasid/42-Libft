@@ -6,7 +6,7 @@
 /*   By: guilhermomasid <guilhermomasid@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 17:52:10 by guilhermoma       #+#    #+#             */
-/*   Updated: 2022/05/03 14:34:52 by guilhermoma      ###   ########.fr       */
+/*   Updated: 2022/05/04 13:40:21 by guilhermoma      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,18 @@
 
 int	main(void)
 {
-	char	dest[50];
-	void	*result;
+	char	*str;
 
-	result = ft_memcpy((void *)dest, "Hello World!", 5);
-	printf("%s\n", (char *)result);
-	printf("%s\n", dest);
+	str = strdup("Learningisfun");
+	char *first, *second;
+	first = str;
+	second = str;
+	printf("Original string :%s\n ", str);
+	// when overlap happens then it just ignore it
+	memcpy(first + 8, first, 10);
+	printf("memcpy overlap : %s\n ", str);
+	// when overlap it start from first position
+	memmove(second + 8, first, 10);
+	printf("memmove overlap : %s\n ", str);
+	return (0);
 }
