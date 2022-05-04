@@ -6,7 +6,7 @@
 /*   By: guilhermomasid <guilhermomasid@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 17:52:10 by guilhermoma       #+#    #+#             */
-/*   Updated: 2022/05/04 13:40:21 by guilhermoma      ###   ########.fr       */
+/*   Updated: 2022/05/04 14:27:02 by guilhermoma      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int	main(void)
 
 	str = strdup("Learningisfun");
 	char *first, *second;
-	first = str;
 	second = str;
+	first = str;
 	printf("Original string :%s\n ", str);
 	// when overlap happens then it just ignore it
 	memcpy(first + 8, first, 10);
