@@ -1,24 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guilhermomasid <guilhermomasid@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/28 17:52:10 by guilhermoma       #+#    #+#             */
-/*   Updated: 2022/05/04 18:17:21 by guilhermoma      ###   ########.fr       */
+/*   Created: 2022/05/04 18:12:25 by guilhermoma       #+#    #+#             */
+/*   Updated: 2022/05/04 18:21:55 by guilhermoma      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
-#include <ctype.h>
-#include <stdio.h>
-#include <string.h>
-
-int	main(void)
+int	ft_toupper(int c)
 {
-	for (int i = 33; i <= 127; i++)
-		printf("%c %c\n", toupper(i), ft_toupper(i));
-	// printf("%c\n", toupper(i));
-	return (0);
+	return ((c >= 97 && c <= 122) ? (c - 32) : c);
 }
