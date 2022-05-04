@@ -6,11 +6,13 @@
 /*   By: guilhermomasid <guilhermomasid@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 18:12:25 by guilhermoma       #+#    #+#             */
-/*   Updated: 2022/05/04 18:21:55 by guilhermoma      ###   ########.fr       */
+/*   Updated: 2022/05/04 18:41:31 by guilhermoma      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_toupper(int c)
 {
-	return ((c >= 97 && c <= 122) ? (c - 32) : c);
+	if (c >= 97 && c <= 122)
+		return (c - 32);
+	return (c);
 }

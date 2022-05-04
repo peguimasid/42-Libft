@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guilhermomasid <guilhermomasid@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/28 17:52:10 by guilhermoma       #+#    #+#             */
-/*   Updated: 2022/05/04 18:42:20 by guilhermoma      ###   ########.fr       */
+/*   Created: 2022/05/04 18:12:25 by guilhermoma       #+#    #+#             */
+/*   Updated: 2022/05/04 18:41:47 by guilhermoma      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
-#include <ctype.h>
-#include <stdio.h>
-#include <string.h>
-
-int	main(void)
+int	ft_tolower(int c)
 {
-	for (int i = 33; i <= 127; i++)
-		printf("%c %c\n", tolower(i), ft_tolower(i));
-	return (0);
+	if (c >= 65 && c <= 90)
+		return (c + 32);
+	return (c);
 }
