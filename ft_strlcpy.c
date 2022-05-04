@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guilhermomasid <guilhermomasid@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/28 17:52:10 by guilhermoma       #+#    #+#             */
-/*   Updated: 2022/05/04 15:02:55 by guilhermoma      ###   ########.fr       */
+/*   Created: 2022/05/04 14:43:20 by guilhermoma       #+#    #+#             */
+/*   Updated: 2022/05/04 15:00:02 by guilhermoma      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
-int	main(void)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	char	*src;
-	char	*dest;
-	size_t	result;
+	size_t	i;
+	size_t	src_len;
 
-	src = strdup("00000");
-	dest = strdup("");
-	result = ft_strlcpy(dest, src, 4);
-	printf("%s\n", dest);
-	printf("%i\n", (int)result);
-	return (0);
+	i = 0;
+	if (!dst || !src)
+		return (0);
+	src_len = ft_strlen(src);
+	if (!dstsize)
+		return (src_len);
+	while (src[i] != '\0' && i < dstsize)
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	if (dstsize < src_len)
+		dst[dstsize - 1] = '\0';
+	else if (dstsize != 0)
+		dst[i] = '\0';
+	return (src_len);
 }
