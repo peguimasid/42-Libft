@@ -6,7 +6,7 @@
 /*   By: guilhermomasid <guilhermomasid@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 17:52:10 by guilhermoma       #+#    #+#             */
-/*   Updated: 2022/05/05 14:56:32 by guilhermoma      ###   ########.fr       */
+/*   Updated: 2022/05/05 15:29:55 by guilhermoma      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,47 +16,43 @@
 #include <string.h>
 #include <unistd.h>
 
-static void	ft_print_result(char const *s)
+int	ft_print_result(int n)
 {
-	int	len;
-
-	len = 0;
-	while (s[len])
-		len++;
-	write(1, s, len);
-}
-
-static void	check_strrchr(char *s, int c, int offset)
-{
-	char	*str;
-
-	if (!(str = ft_strrchr(s, c)))
-		ft_print_result("NULL");
+	if (n > 0)
+		return (1);
+	else if (n < 0)
+		return (-1);
 	else
-	{
-		ft_print_result(str);
-		if (str != (s + offset))
-			ft_print_result("\nReturn value is false");
-	}
+		return (0);
 }
 
-int	main(int argc, const char *argv[])
+int	main(void)
 {
-	char	*str2;
-	int		arg;
-	char	*str3;
-
-	str2 = strdup("bonjour");
-	alarm(5);
-	check_strrchr(str2, 'b', 0);
-	check_strrchr(str2, 'o', 4);
-	str3 = strdup("bonjourno");
-	check_strrchr(str3, 'o', 8);
-	check_strrchr(str2, 'j', 3);
-	check_strrchr(str2, 's', 0);
-	check_strrchr(str2, '\0', 7);
-	str3 = strdup("");
-	check_strrchr(str3, '\0', 0);
-	check_strrchr(str2 + 2, 'b', 0);
+	printf("%d\n", ft_print_result(strncmp("salut", "salut",
+					5)) == ft_print_result(ft_strncmp("salut", "salut", 5)));
+	printf("%d\n", ft_print_result(strncmp("test", "testss",
+					7)) == ft_print_result(ft_strncmp("test", "testss", 7)));
+	printf("%d\n", ft_print_result(strncmp("testss", "test",
+					7)) == ft_print_result(ft_strncmp("testss", "test", 7)));
+	printf("%d\n", ft_print_result(strncmp("test", "tEst",
+					4)) == ft_print_result(ft_strncmp("test", "tEst", 4)));
+	printf("%d\n", ft_print_result(strncmp("", "test",
+					4)) == ft_print_result(ft_strncmp("", "test", 4)));
+	printf("%d\n", ft_print_result(strncmp("test", "",
+					4)) == ft_print_result(ft_strncmp("test", "", 4)));
+	printf("%d\n", ft_print_result(strncmp("abcdefghij", "abcdefgxyz",
+					3)) == ft_print_result(ft_strncmp("abcdefghij",
+					"abcdefgxyz", 3)));
+	printf("%d\n", ft_print_result(strncmp("abcdefgh", "abcdwxyz",
+					4)) == ft_print_result(ft_strncmp("abcdefgh", "abcdwxyz",
+					4)));
+	printf("%d\n", ft_print_result(strncmp("zyxbcdefgh", "abcdwxyz",
+					0)) == ft_print_result(ft_strncmp("zyxbcdefgh", "abcdwxyz",
+					0)));
+	printf("%d\n", ft_print_result(strncmp("abcdefgh", "",
+					0)) == ft_print_result(ft_strncmp("abcdefgh", "", 0)));
+	printf("%d\n", ft_print_result(strncmp("test\200", "test\0",
+					6)) == ft_print_result(ft_strncmp("test\200", "test\0",
+					6)));
 	return (0);
 }
