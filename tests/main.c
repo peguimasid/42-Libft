@@ -6,7 +6,7 @@
 /*   By: guilhermomasid <guilhermomasid@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 17:52:10 by guilhermoma       #+#    #+#             */
-/*   Updated: 2022/05/05 16:26:25 by guilhermoma      ###   ########.fr       */
+/*   Updated: 2022/05/06 12:39:57 by guilhermoma      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,40 +16,21 @@
 #include <string.h>
 #include <unistd.h>
 
-static void	ft_print_result(const char *s)
+int	main(void)
 {
-	int	len;
-
-	len = 0;
-	while (s[len])
-		len++;
-	write(1, s, len);
-}
-
-static void	check_memchr(void *s, char c, int n)
-{
-	const char	*str;
-
-	str = ft_memchr(s, c, n);
-	if (!str)
-		ft_print_result("NULL");
-	else
-		ft_print_result(str);
-	printf("\n");
-}
-
-int	main(int argc, const char *argv[])
-{
-	int	arg;
-
-	check_memchr("bonjour", 'o', 1);
-	check_memchr("bonjour", 'b', 4);
-	check_memchr("bonjour", 'o', 7);
-	check_memchr("bonjourno", 'n', 2);
-	check_memchr("bonjour", 'j', 6);
-	check_memchr("bonjour", 's', 7);
-	
-	int	tab[7] = {-49, 49, 1, -1, 0, -2, 2};
-	printf("%s", (char *)memchr(tab, -1, 7));
+	printf("%d %d\n", ft_memcmp("salut", "salut", 5), memcmp("salut", "salut",
+				5));
+	printf("%d %d\n", ft_memcmp("t\200", "t\0", 2), memcmp("t\200", "t\0", 2));
+	printf("%d %d\n", ft_memcmp("testss", "test", 5), memcmp("testss", "test",
+				5));
+	printf("%d %d\n", ft_memcmp("test", "tEst", 4), memcmp("test", "tEst", 4));
+	printf("%d %d\n", ft_memcmp("", "test", 4), memcmp("", "test", 4));
+	printf("%d %d\n", ft_memcmp("test", "", 4), memcmp("test", "", 4));
+	printf("%d %d\n", ft_memcmp("abcdefghij", "abcdefgxyz", 7),
+			memcmp("abcdefghij", "abcdefgxyz", 7));
+	printf("%d %d\n", ft_memcmp("abcdefgh", "abcdwxyz", 6), memcmp("abcdefgh",
+				"abcdwxyz", 6));
+	printf("%d %d\n", ft_memcmp("zyxbcdefgh", "abcdefgxyz", 0),
+			memcmp("zyxbcdefgh", "abcdefgxyz", 0));
 	return (0);
 }
