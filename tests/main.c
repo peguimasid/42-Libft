@@ -6,7 +6,7 @@
 /*   By: guilhermomasid <guilhermomasid@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 17:52:10 by guilhermoma       #+#    #+#             */
-/*   Updated: 2022/05/06 12:39:57 by guilhermoma      ###   ########.fr       */
+/*   Updated: 2022/05/06 14:48:06 by guilhermoma      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,28 @@
 
 int	main(void)
 {
-	printf("%d %d\n", ft_memcmp("salut", "salut", 5), memcmp("salut", "salut",
-				5));
-	printf("%d %d\n", ft_memcmp("t\200", "t\0", 2), memcmp("t\200", "t\0", 2));
-	printf("%d %d\n", ft_memcmp("testss", "test", 5), memcmp("testss", "test",
-				5));
-	printf("%d %d\n", ft_memcmp("test", "tEst", 4), memcmp("test", "tEst", 4));
-	printf("%d %d\n", ft_memcmp("", "test", 4), memcmp("", "test", 4));
-	printf("%d %d\n", ft_memcmp("test", "", 4), memcmp("test", "", 4));
-	printf("%d %d\n", ft_memcmp("abcdefghij", "abcdefgxyz", 7),
-			memcmp("abcdefghij", "abcdefgxyz", 7));
-	printf("%d %d\n", ft_memcmp("abcdefgh", "abcdwxyz", 6), memcmp("abcdefgh",
-				"abcdwxyz", 6));
-	printf("%d %d\n", ft_memcmp("zyxbcdefgh", "abcdefgxyz", 0),
-			memcmp("zyxbcdefgh", "abcdefgxyz", 0));
+	printf("%d\n", ft_strnstr("lorem ipsum dolor sit amet", "lorem",
+				15) == strnstr("lorem ipsum dolor sit amet", "lorem", 15));
+	printf("%d\n", ft_strnstr("lorem ipsum dolor sit amet", "ipsum",
+				15) == strnstr("lorem ipsum dolor sit amet", "ipsum", 15));
+	printf("%d\n",
+			ft_strnstr("lorem ipsum dolor sit lorem ipsum dolor ", "ipsum",
+					35) == strnstr("lorem ipsum dolor sit lorem ipsum dolor ",
+					"ipsum", 35));
+	printf("%d\n", ft_strnstr("lorem ipsum dolor sit amet", "",
+				10) == strnstr("lorem ipsum dolor sit amet", "", 10));
+	printf("%d\n", ft_strnstr("lorem ipsum dolor sit amet", "ipsumm",
+				30) == strnstr("lorem ipsum dolor sit amet", "ipsumm", 30));
+	printf("%d\n", ft_strnstr("lorem ipsum dolor sit amet", "dol",
+				30) == strnstr("lorem ipsum dolor sit amet", "dol", 30));
+	printf("%d\n", ft_strnstr("lorem ipsum dolor sit amet", "consectetur",
+				30) == strnstr("lorem ipsum dolor sit amet", "consectetur",
+				30));
+	printf("%d\n", ft_strnstr("lorem ipsum dolor sit amet", "sit",
+				10) == strnstr("lorem ipsum dolor sit amet", "sit", 10));
+	printf("%d\n", ft_strnstr("lorem ipsum dolor sit amet", "dolor",
+				15) == strnstr("lorem ipsum dolor sit amet", "dolor", 15));
+	printf("%d\n", ft_strnstr("lorem ipsum dolor sit amet", "dolor",
+				0) == strnstr("lorem ipsum dolor sit amet", "dolor", 0));
 	return (0);
 }
