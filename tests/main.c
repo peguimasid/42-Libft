@@ -6,7 +6,7 @@
 /*   By: guilhermomasid <guilhermomasid@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 17:52:10 by guilhermoma       #+#    #+#             */
-/*   Updated: 2022/05/06 14:48:06 by guilhermoma      ###   ########.fr       */
+/*   Updated: 2022/05/06 15:52:22 by guilhermoma      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,28 +18,24 @@
 
 int	main(void)
 {
-	printf("%d\n", ft_strnstr("lorem ipsum dolor sit amet", "lorem",
-				15) == strnstr("lorem ipsum dolor sit amet", "lorem", 15));
-	printf("%d\n", ft_strnstr("lorem ipsum dolor sit amet", "ipsum",
-				15) == strnstr("lorem ipsum dolor sit amet", "ipsum", 15));
-	printf("%d\n",
-			ft_strnstr("lorem ipsum dolor sit lorem ipsum dolor ", "ipsum",
-					35) == strnstr("lorem ipsum dolor sit lorem ipsum dolor ",
-					"ipsum", 35));
-	printf("%d\n", ft_strnstr("lorem ipsum dolor sit amet", "",
-				10) == strnstr("lorem ipsum dolor sit amet", "", 10));
-	printf("%d\n", ft_strnstr("lorem ipsum dolor sit amet", "ipsumm",
-				30) == strnstr("lorem ipsum dolor sit amet", "ipsumm", 30));
-	printf("%d\n", ft_strnstr("lorem ipsum dolor sit amet", "dol",
-				30) == strnstr("lorem ipsum dolor sit amet", "dol", 30));
-	printf("%d\n", ft_strnstr("lorem ipsum dolor sit amet", "consectetur",
-				30) == strnstr("lorem ipsum dolor sit amet", "consectetur",
-				30));
-	printf("%d\n", ft_strnstr("lorem ipsum dolor sit amet", "sit",
-				10) == strnstr("lorem ipsum dolor sit amet", "sit", 10));
-	printf("%d\n", ft_strnstr("lorem ipsum dolor sit amet", "dolor",
-				15) == strnstr("lorem ipsum dolor sit amet", "dolor", 15));
-	printf("%d\n", ft_strnstr("lorem ipsum dolor sit amet", "dolor",
-				0) == strnstr("lorem ipsum dolor sit amet", "dolor", 0));
+	printf("%d\n", atoi("0") == ft_atoi("0"));
+	printf("%d\n", atoi("546:5") == ft_atoi("546:5"));
+	printf("%d\n", atoi("-4886") == ft_atoi("-4886"));
+	printf("%d\n", atoi("+548") == ft_atoi("+548"));
+	printf("%d\n", atoi("054854") == ft_atoi("054854"));
+	printf("%d\n", atoi("000074") == ft_atoi("000074"));
+	printf("%d\n", atoi("+-54") == ft_atoi("+-54"));
+	printf("%d\n", atoi("-+48") == ft_atoi("-+48"));
+	printf("%d\n", atoi("--47") == ft_atoi("--47"));
+	printf("%d\n", atoi("++47") == ft_atoi("++47"));
+	printf("%d\n", atoi("+47+5") == ft_atoi("+47+5"));
+	printf("%d\n", atoi("-47-5") == ft_atoi("-47-5"));
+	printf("%d\n", atoi("\e475") == ft_atoi("\e475"));
+	printf("%d\n", atoi("\t\n\r\v\f  469 \n") == ft_atoi("\t\n\r\v\f  469 \n"));
+	printf("%d\n", atoi("-2147483648") == ft_atoi("-2147483648"));
+	printf("%d\n", atoi("2147483647") == ft_atoi("2147483647"));
+	printf("%d\n", atoi("\t\n\r\v\fd469 \n") == ft_atoi("\t\n\r\v\fd469 \n"));
+	printf("%d\n", atoi("\n\n\n  -46\b9 \n5d6") == ft_atoi("\n\n\n  -46\b9 \n5d6"));
+	printf("%d\n", atoi("") == ft_atoi(""));
 	return (0);
 }
