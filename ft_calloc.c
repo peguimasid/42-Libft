@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guilhermomasid <guilhermomasid@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/28 17:52:10 by guilhermoma       #+#    #+#             */
-/*   Updated: 2022/05/06 21:03:31 by guilhermoma      ###   ########.fr       */
+/*   Created: 2022/05/06 21:00:44 by guilhermoma       #+#    #+#             */
+/*   Updated: 2022/05/06 21:05:33 by guilhermoma      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
+#include "libft.h"
 
-int	main(void)
+void	*ft_calloc(size_t count, size_t size)
 {
-	char	*str;
+	void	*result;
 
-	str = (char *)ft_calloc(30, sizeof(char));
-	str[10] = 'h';
-	if (!str)
-		write(1, "NULL", 4);
-	else
-		write(1, str, 30);
-	free(str);
-	return (0);
+	result = malloc(count * size);
+	if (!result)
+		return (NULL);
+	ft_bzero(result, size);
+	return (result);
 }
