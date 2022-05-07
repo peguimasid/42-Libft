@@ -6,7 +6,7 @@
 /*   By: guilhermomasid <guilhermomasid@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 17:52:10 by guilhermoma       #+#    #+#             */
-/*   Updated: 2022/05/06 21:25:21 by guilhermoma      ###   ########.fr       */
+/*   Updated: 2022/05/06 21:33:23 by guilhermoma      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ int	main(void)
 	char	*str;
 	char	*str_dup;
 
-	str = "turma";
+	str = "lorem ipsum dolor sit amet";
 	if (!(str_dup = ft_strdup(str)))
 		printf("NULL");
 	else
-		printf("%i\n", str_dup[5]);
+		printf("%s\n", str_dup);
 	if (str_dup == str)
 		printf("\nstr_dup's adress == str's adress");
 	else
