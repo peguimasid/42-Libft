@@ -6,7 +6,7 @@
 /*   By: guilhermomasid <guilhermomasid@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 17:52:10 by guilhermoma       #+#    #+#             */
-/*   Updated: 2022/05/06 21:33:23 by guilhermoma      ###   ########.fr       */
+/*   Updated: 2022/05/06 22:25:53 by guilhermoma      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,38 @@
 #include <string.h>
 #include <unistd.h>
 
+static void	ft_print_result(char const *s)
+{
+	int	len;
+
+	len = 0;
+	while (s[len])
+		len++;
+	write(1, s, len);
+}
+
+static void	check_substr(char *str, int start, int len)
+{
+	char	*substr;
+
+	if (!(substr = ft_substr(str, start, len)))
+		ft_print_result("NULL");
+	else
+		ft_print_result(substr);
+	if (str == substr)
+		ft_print_result("\nA new string was not returned");
+	else
+		free(substr);
+}
+
 int	main(void)
 {
 	char	*str;
-	char	*str_dup;
 
 	str = "lorem ipsum dolor sit amet";
-	if (!(str_dup = ft_strdup(str)))
-		printf("NULL");
-	else
-		printf("%s\n", str_dup);
-	if (str_dup == str)
-		printf("\nstr_dup's adress == str's adress");
-	else
-		free(str_dup);
+	check_substr(str, 0, 10);
+	// check_substr(str, 7, 10);
+	// check_substr(str, 7, 0);
+	// check_substr(str, 0, 0);
+	return (0);
 }
