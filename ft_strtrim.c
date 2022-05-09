@@ -6,7 +6,7 @@
 /*   By: guilhermomasid <guilhermomasid@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 18:04:56 by guilhermoma       #+#    #+#             */
-/*   Updated: 2022/05/09 18:36:57 by guilhermoma      ###   ########.fr       */
+/*   Updated: 2022/05/09 18:57:51 by guilhermoma      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 		start_index++;
 	if (start_index == ft_strlen(s1))
 	{
-		if (!(result = ft_strdup("")))
+		result = ft_strdup("");
+		if (!result)
 			return (NULL);
 		else
 			return (result);
