@@ -6,7 +6,7 @@
 /*   By: guilhermomasid <guilhermomasid@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 17:52:10 by guilhermoma       #+#    #+#             */
-/*   Updated: 2022/05/09 18:52:53 by guilhermoma      ###   ########.fr       */
+/*   Updated: 2022/05/10 15:21:31 by guilhermoma      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 #include <string.h>
 #include <unistd.h>
 
-static void	ft_print_result(char const *s)
+static void			ft_print_result(char const *s)
 {
-	int	len;
+	int		len;
 
 	len = 0;
 	while (s[len])
@@ -26,41 +26,42 @@ static void	ft_print_result(char const *s)
 	write(1, s, len);
 }
 
-static void	check_strtrim(char *s1, char *set)
+static void			ft_print_tabstr(char **tabstr)
 {
-	char	*strtrim;
+	int		i;
 
-	if (!(strtrim = ft_strtrim(s1, set)))
-		ft_print_result("NULL");
-	else
-		ft_print_result(strtrim);
-	if (strtrim == s1)
-		ft_print_result("\nA new string was not returned");
-	else
-		free(strtrim);
+	i = 0;
+	while (tabstr[i] != NULL)
+	{
+		ft_print_result(tabstr[i]);
+		write(1, "\n", 1);
+		free(tabstr[i]);
+		i++;
+	}
+	free(tabstr);
 }
 
-int	main(int argc, const char *argv[])
+static void			check_split(char *s, char c)
 {
-	char	*set;
-	char	*s1;
+	char	**tabstr;
 
-	// Chars to remve (\t, space, \n)
-	set = ft_strdup("\t \n");
-	// Test 1 => "lorem \n ipsum \t dolor \n sit \t amet"
-	s1 = ft_strdup("lorem \n ipsum \t dolor \n sit \t amet");
-	check_strtrim(s1, set);
-	// Test 2 => "lorem ipsum dolor sit amet"
-	s1 = ft_strdup("lorem ipsum dolor sit amet \n \t ");
-	check_strtrim(s1, set);
-	// Test 3 =>  "lorem ipsum dolor sit amet"
-	s1 = ft_strdup(" \n \t lorem ipsum dolor sit amet");
-	check_strtrim(s1, set);
-	// Test 4 => "lorem \n ipsum \t dolor \n sit \t amet"
-	s1 = ft_strdup("  \n  \t  lorem \n ipsum \t dolor \n sit \t amet  \t \n ");
-	check_strtrim(s1, set);
-	// Test 5 => ""
-	s1 = ft_strdup("          ");
-	check_strtrim(s1, set);
+	if (!(tabstr = ft_split(s, c)))
+		ft_print_result("NULL");
+	else
+		ft_print_tabstr(tabstr);
+}
+
+int					main(int argc, const char *argv[])
+{
+	// TEST 1 => [""]
+	// check_split("          ", ' ');
+	// TEST 2 => ["lorem", "ipsum", "dolor", "sit", "amet,", "consectetur", "adipiscing", "elit.", "Sed", "non", "risus.", "Suspendisse"]
+	check_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse", ' ');
+	// TEST 3 => ["lorem", "ipsum", "dolor", "sit", "amet,", "consectetur", "adipiscing", "elit.", "Sed", "non", "risus.", "Suspendisse"]
+	// check_split("   lorem   ipsum dolor     sit amet, consectetur   adipiscing elit. Sed non risus. Suspendisse   ", ' ');
+	// TEST 4 => ['lorem ', 'psum dolor s', 't amet, consectetur ad', 'p', 'sc', 'ng el', 't. Sed non r', 'sus. Suspend', 'sse lectus tortor, d', 'gn', 'ss', 'm s', 't amet, ad', 'p', 'sc', 'ng nec, ultr', 'c', 'es sed, dolor. Cras elementum ultr', 'c', 'es d', 'am. Maecenas l', 'gula massa, var', 'us a, semper congue, eu', 'smod non, m', '.']
+	// check_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultricies diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.", 'i');
+	// TEST 5 => ['lorem ipsum dolor sit amet, consectetur adipiscing… massa, varius a, semper congue, euismod non, mi.']
+	// check_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultricies diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.", 'z');
 	return (0);
 }
