@@ -6,7 +6,7 @@
 #    By: guilhermomasid <guilhermomasid@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/28 16:23:44 by guilhermoma       #+#    #+#              #
-#    Updated: 2022/05/10 18:30:05 by guilhermoma      ###   ########.fr        #
+#    Updated: 2022/05/11 13:44:31 by guilhermoma      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,7 @@ SRCS = ft_isalpha.c		\
 		ft_itoa.c		\
 		ft_strmapi.c		\
 		ft_striteri.c		\
-		# ft_putchar_fd.c	\
+		ft_putchar_fd.c	\
 		# ft_putstr_fd.c	\
 		# ft_putendl_fd.c	\
 		# ft_putnbr_fd.c	\

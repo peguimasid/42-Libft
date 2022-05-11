@@ -6,7 +6,7 @@
 /*   By: guilhermomasid <guilhermomasid@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 17:52:10 by guilhermoma       #+#    #+#             */
-/*   Updated: 2022/05/10 18:49:55 by guilhermoma      ###   ########.fr       */
+/*   Updated: 2022/05/11 14:01:12 by guilhermoma      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,54 @@ void	f(unsigned int pos, char *c)
 
 int	main(void)
 {
-	char	*str;
+	int	i;
 
-	str = ft_strdup("LoReM iPsUm");
-	ft_striteri(str, f);
-	printf("%s", str);
-	free(str);
+	i = '0';
+	while (i <= '9')
+	{
+		// 0123456789
+		ft_putchar_fd(i, 1);
+		i++;
+	}
+	printf("\n");
+	i = 58;
+	while (i <= 64)
+	{
+		// :;<=>?@
+		ft_putchar_fd(i, 2);
+		i++;
+	}
+	printf("\n");
+	i = 'A';
+	while (i <= 'Z')
+	{
+		// ABCDEFGHIJKLMNOPQRSTUVWXYZ
+		ft_putchar_fd(i, 1);
+		i++;
+	}
+	printf("\n");
+	i = 91;
+	while (i <= 96)
+	{
+		// [\]^_`
+		ft_putchar_fd(i, 2);
+		i++;
+	}
+	printf("\n");
+	i = 'a';
+	while (i <= 'z')
+	{
+		// abcdefghijklmnopqrstuvwxyz
+		ft_putchar_fd(i, 1);
+		i++;
+	}
+	printf("\n");
+	i = 123;
+	while (i <= 127)
+	{
+		// {|}~
+		ft_putchar_fd(i, 2);
+		i++;
+	}
 	return (0);
 }
