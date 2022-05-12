@@ -6,7 +6,7 @@
 #    By: guilhermomasid <guilhermomasid@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/28 16:23:44 by guilhermoma       #+#    #+#              #
-#    Updated: 2022/05/12 14:45:19 by guilhermoma      ###   ########.fr        #
+#    Updated: 2022/05/12 15:14:35 by guilhermoma      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,7 @@ SRCS = ft_isalpha.c		\
 
 BONUS =	ft_lstnew.c			\
 		ft_lstadd_front.c	\
-		# ft_lstsize.c		\
+		ft_lstsize.c		\
 		# ft_lstlast.c		\
 		# ft_lstadd_back.c	\
 		# ft_lstdelone.c		\
