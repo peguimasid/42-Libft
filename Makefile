@@ -6,7 +6,7 @@
 #    By: guilhermomasid <guilhermomasid@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/28 16:23:44 by guilhermoma       #+#    #+#              #
-#    Updated: 2022/05/12 14:21:16 by guilhermoma      ###   ########.fr        #
+#    Updated: 2022/05/12 14:33:16 by guilhermoma      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,7 @@ SRCS = ft_isalpha.c		\
 		ft_putendl_fd.c	\
 		ft_putnbr_fd.c	\
 
-# BONUS =	ft_lstnew.c			\
+BONUS =	ft_lstnew.c			\
 		# ft_lstadd_front.c	\
 		# ft_lstsize.c		\
 		# ft_lstlast.c		\

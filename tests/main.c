@@ -6,7 +6,7 @@
 /*   By: guilhermomasid <guilhermomasid@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 17:52:10 by guilhermoma       #+#    #+#             */
-/*   Updated: 2022/05/12 14:30:33 by guilhermoma      ###   ########.fr       */
+/*   Updated: 2022/05/12 14:40:41 by guilhermoma      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,9 @@ void	print_list(t_list *current_node)
 
 int	main(void)
 {
-	t_list	*new_node;
-	t_list	*new_node2;
+	t_list	*list;
 
-	new_node = (t_list *)malloc(sizeof(t_list));
-	new_node2 = (t_list *)malloc(sizeof(t_list));
-	new_node->content = (void *)1;
-	new_node2->content = (void *)2;
-	new_node->next = new_node2;
-	print_list(new_node);
+	list = ft_lstnew((void *)1);
+	print_list(list);
 	return (0);
 }
