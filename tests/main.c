@@ -6,7 +6,7 @@
 /*   By: guilhermomasid <guilhermomasid@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 17:52:10 by guilhermoma       #+#    #+#             */
-/*   Updated: 2022/05/14 12:32:47 by guilhermoma      ###   ########.fr       */
+/*   Updated: 2022/05/14 14:02:09 by guilhermoma      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	print_list(t_list *current_node)
 
 static void	ft_del(void *content)
 {
-	content = NULL;
+	content = 0;
 }
 
 int	main(void)
@@ -41,6 +41,8 @@ int	main(void)
 	t_list	*elem2;
 	t_list	*elem3;
 	t_list	*elem4;
+	t_list	*elem5;
+	t_list	*elem6;
 	int		len;
 
 	list = ft_lstnew((void *)1);
@@ -50,14 +52,24 @@ int	main(void)
 	ft_lstadd_back(&list, elem3);
 	elem4 = ft_lstnew((void *)4);
 	ft_lstadd_back(&list, elem4);
+	elem5 = ft_lstnew((void *)5);
+	ft_lstadd_back(&list, elem5);
+	elem6 = ft_lstnew((void *)6);
+	ft_lstadd_back(&list, elem6);
+	printf("------ BEFORE: ------\n");
 	print_list(list);
 	printf("\n");
-	ft_lstdelone(elem3, &ft_del);
 	len = ft_lstsize(list);
+	printf("length = %d\n", len);
+	// Remove the content from elem 3 and free that node
+	ft_lstdelone(elem3, &ft_del);
 	// Uncomment the following two lines to stop see garbage values
 	// elem3 = NULL;
 	// elem2->next = NULL;
-	printf("%d\n", len);
+	printf("------ AFTER: ------\n");
 	print_list(list);
+	printf("\n");
+	len = ft_lstsize(list);
+	printf("length = %d\n", len);
 	return (0);
 }
