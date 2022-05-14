@@ -6,7 +6,7 @@
 /*   By: guilhermomasid <guilhermomasid@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 17:10:23 by guilhermoma       #+#    #+#             */
-/*   Updated: 2022/05/12 15:14:32 by guilhermoma      ###   ########.fr       */
+/*   Updated: 2022/05/14 09:55:38 by guilhermoma      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char				**ft_split(char const *s, char c);
 
 t_list				*ft_lstnew(void *content);
-// t_list				*ft_lstlast(t_list *lst);
+t_list				*ft_lstlast(t_list *lst);
 // t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 //						void (*del)(void *));
 

@@ -6,7 +6,7 @@
 /*   By: guilhermomasid <guilhermomasid@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 17:52:10 by guilhermoma       #+#    #+#             */
-/*   Updated: 2022/05/12 15:21:23 by guilhermoma      ###   ########.fr       */
+/*   Updated: 2022/05/14 10:05:58 by guilhermoma      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,12 @@ int	main(void)
 {
 	t_list	*list;
 	t_list	*new_node;
+	t_list	*last_node;
 	int		list_len;
 
-	list = ft_lstnew((void *)3);
+	list = ft_lstnew((void *)4);
+	new_node = ft_lstnew((void *)3);
+	ft_lstadd_front(&list, new_node);
 	new_node = ft_lstnew((void *)2);
 	ft_lstadd_front(&list, new_node);
 	new_node = ft_lstnew((void *)1);
@@ -44,6 +47,8 @@ int	main(void)
 	print_list(list);
 	printf("\n");
 	list_len = ft_lstsize(list);
-	printf("%d\n", list_len);
+	last_node = ft_lstlast(list);
+	printf("lenght = %d\n", list_len);
+	printf("last node val = %zu\n", (size_t)last_node->content);
 	return (0);
 }
