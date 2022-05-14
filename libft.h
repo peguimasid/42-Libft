@@ -6,7 +6,7 @@
 /*   By: guilhermomasid <guilhermomasid@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 17:10:23 by guilhermoma       #+#    #+#             */
-/*   Updated: 2022/05/14 10:24:51 by guilhermoma      ###   ########.fr       */
+/*   Updated: 2022/05/14 10:59:13 by guilhermoma      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ t_list				*ft_lstlast(t_list *lst);
 
 void				ft_lstadd_front(t_list **alst, t_list *new);
 void				ft_lstadd_back(t_list **alst, t_list *new);
-// void				ft_lstdelone(t_list *lst, void (*del)(void*));
+void				ft_lstdelone(t_list *lst, void (*del)(void *));
 // void				ft_lstclear(t_list **lst, void (*del)(void*));
 // void				ft_lstiter(t_list *lst, void (*f)(void *));
 

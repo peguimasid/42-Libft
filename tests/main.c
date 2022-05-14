@@ -6,7 +6,7 @@
 /*   By: guilhermomasid <guilhermomasid@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 17:52:10 by guilhermoma       #+#    #+#             */
-/*   Updated: 2022/05/14 10:48:23 by guilhermoma      ###   ########.fr       */
+/*   Updated: 2022/05/14 12:32:47 by guilhermoma      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,37 +30,34 @@ void	print_list(t_list *current_node)
 	}
 }
 
+static void	ft_del(void *content)
+{
+	content = NULL;
+}
+
 int	main(void)
 {
 	t_list	*list;
-	t_list	*new_node;
-	t_list	*last_node;
-	int		list_len;
+	t_list	*elem2;
+	t_list	*elem3;
+	t_list	*elem4;
+	int		len;
 
-	list = ft_lstnew((void *)4);
-	// ADD IN BEGINNING
-	new_node = ft_lstnew((void *)3);
-	ft_lstadd_front(&list, new_node);
-	// ADD IN BEGINNING
-	new_node = ft_lstnew((void *)2);
-	ft_lstadd_front(&list, new_node);
-	// ADD IN BEGINNING
-	new_node = ft_lstnew((void *)1);
-	ft_lstadd_front(&list, new_node);
+	list = ft_lstnew((void *)1);
+	elem2 = ft_lstnew((void *)2);
+	ft_lstadd_back(&list, elem2);
+	elem3 = ft_lstnew((void *)3);
+	ft_lstadd_back(&list, elem3);
+	elem4 = ft_lstnew((void *)4);
+	ft_lstadd_back(&list, elem4);
 	print_list(list);
 	printf("\n");
-	list_len = ft_lstsize(list);
-	last_node = ft_lstlast(list);
-	printf("lenght = %d\n", list_len);
-	printf("last node val = %zu\n", (size_t)last_node->content);
-	// ADD IN END
-	new_node = ft_lstnew((void *)9);
-	ft_lstadd_back(&list, new_node);
+	ft_lstdelone(elem3, &ft_del);
+	len = ft_lstsize(list);
+	// Uncomment the following two lines to stop see garbage values
+	// elem3 = NULL;
+	// elem2->next = NULL;
+	printf("%d\n", len);
 	print_list(list);
-	printf("\n");
-	list_len = ft_lstsize(list);
-	last_node = ft_lstlast(list);
-	printf("lenght = %d\n", list_len);
-	printf("last node val = %zu\n", (size_t)last_node->content);
 	return (0);
 }
