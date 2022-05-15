@@ -6,7 +6,7 @@
 /*   By: guilhermomasid <guilhermomasid@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 17:52:10 by guilhermoma       #+#    #+#             */
-/*   Updated: 2022/05/14 14:02:09 by guilhermoma      ###   ########.fr       */
+/*   Updated: 2022/05/15 12:40:23 by guilhermoma      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int	main(void)
 	len = ft_lstsize(list);
 	printf("length = %d\n", len);
 	// Remove the content from elem 3 and free that node
-	ft_lstdelone(elem3, &ft_del);
+	ft_lstclear(&elem2, &ft_del);
 	// Uncomment the following two lines to stop see garbage values
 	// elem3 = NULL;
 	// elem2->next = NULL;

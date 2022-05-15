@@ -6,7 +6,7 @@
 #    By: guilhermomasid <guilhermomasid@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/28 16:23:44 by guilhermoma       #+#    #+#              #
-#    Updated: 2022/05/14 10:59:17 by guilhermoma      ###   ########.fr        #
+#    Updated: 2022/05/15 12:26:31 by guilhermoma      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,7 +53,7 @@ BONUS =	ft_lstnew.c			\
 		ft_lstlast.c		\
 		ft_lstadd_back.c	\
 		ft_lstdelone.c		\
-		# ft_lstclear.c		\
+		ft_lstclear.c		\
 		# ft_lstiter.c		\
 		# ft_lstmap.c			\
 
