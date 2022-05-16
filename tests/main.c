@@ -6,7 +6,7 @@
 /*   By: guilhermomasid <guilhermomasid@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 17:52:10 by guilhermoma       #+#    #+#             */
-/*   Updated: 2022/05/16 18:36:18 by guilhermoma      ###   ########.fr       */
+/*   Updated: 2022/05/16 18:43:37 by guilhermoma      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,11 +68,8 @@ int	main(void)
 	printf("\n");
 	len = ft_lstsize(list);
 	printf("length = %d\n", len);
-	// Remove the content from elem 3 and free that node
-	ft_lstiter(elem2, (void *)&ft_change_all_to_o);
-	// Uncomment the following two lines to stop see garbage values
-	// elem3 = NULL;
-	// elem2->next = NULL;
+	// Change all node in front of elem3 to be the letter "O"
+	ft_lstiter(elem3, (void *)&ft_change_all_to_o);
 	printf("------ AFTER: ------\n");
 	print_list(list);
 	printf("\n");
