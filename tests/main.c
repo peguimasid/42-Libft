@@ -6,7 +6,7 @@
 /*   By: guilhermomasid <guilhermomasid@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 17:52:10 by guilhermoma       #+#    #+#             */
-/*   Updated: 2022/05/16 18:44:28 by guilhermoma      ###   ########.fr       */
+/*   Updated: 2022/05/16 19:16:27 by guilhermoma      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,20 @@ void	print_list(t_list *current_node)
 	}
 }
 
-static void	ft_change_all_to_o(char *content)
+static void	ft_delelem(t_list *elem)
+{
+	if (elem)
+		free(elem->content);
+}
+
+static void	ft_change_all_to_y(char *content)
 {
 	int	len;
 
 	len = 0;
 	while (content[len])
 	{
-		content[len] = 'O';
+		content[len] = 'y';
 		len++;
 	}
 }
@@ -51,6 +57,7 @@ int	main(void)
 	t_list	*elem5;
 	t_list	*elem6;
 	int		len;
+	t_list	*new_list;
 
 	list = ft_lstnew((void *)ft_strdup("1"));
 	elem2 = ft_lstnew((void *)ft_strdup("2"));
@@ -63,17 +70,18 @@ int	main(void)
 	ft_lstadd_back(&list, elem5);
 	elem6 = ft_lstnew((void *)ft_strdup("6"));
 	ft_lstadd_back(&list, elem6);
-	printf("------ BEFORE: ------\n");
+	printf("------ Normal: ------\n");
 	print_list(list);
 	printf("\n");
 	len = ft_lstsize(list);
 	printf("length = %d\n", len);
-	// Change all nodes in front of elem2 to be the letter "O"
-	ft_lstiter(elem3, (void *)&ft_change_all_to_o);
-	printf("------ AFTER: ------\n");
-	print_list(list);
+	// Create new list
+	new_list = ft_lstmap(list, (void *)&ft_change_all_to_y,
+			(void *)&ft_delelem);
+	printf("------ MAP: ------\n");
+	print_list(new_list);
 	printf("\n");
-	len = ft_lstsize(list);
+	len = ft_lstsize(new_list);
 	printf("length = %d\n", len);
 	return (0);
 }
