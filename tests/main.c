@@ -6,7 +6,7 @@
 /*   By: guilhermomasid <guilhermomasid@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 17:52:10 by guilhermoma       #+#    #+#             */
-/*   Updated: 2022/05/15 12:40:23 by guilhermoma      ###   ########.fr       */
+/*   Updated: 2022/05/16 18:36:18 by guilhermoma      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,21 +18,28 @@
 
 void	print_list(t_list *current_node)
 {
-	void	*p;
+	char	*p;
 
 	while (current_node)
 	{
-		p = current_node->content;
-		printf("%zu", (size_t)p);
+		p = (char *)current_node->content;
+		printf("%s", p);
 		if (current_node->next)
 			printf(" -> ");
 		current_node = current_node->next;
 	}
 }
 
-static void	ft_del(void *content)
+static void	ft_change_all_to_o(char *content)
 {
-	content = 0;
+	int	len;
+
+	len = 0;
+	while (content[len])
+	{
+		content[len] = 'O';
+		len++;
+	}
 }
 
 int	main(void)
@@ -45,16 +52,16 @@ int	main(void)
 	t_list	*elem6;
 	int		len;
 
-	list = ft_lstnew((void *)1);
-	elem2 = ft_lstnew((void *)2);
+	list = ft_lstnew((void *)ft_strdup("1"));
+	elem2 = ft_lstnew((void *)ft_strdup("2"));
 	ft_lstadd_back(&list, elem2);
-	elem3 = ft_lstnew((void *)3);
+	elem3 = ft_lstnew((void *)ft_strdup("3"));
 	ft_lstadd_back(&list, elem3);
-	elem4 = ft_lstnew((void *)4);
+	elem4 = ft_lstnew((void *)ft_strdup("4"));
 	ft_lstadd_back(&list, elem4);
-	elem5 = ft_lstnew((void *)5);
+	elem5 = ft_lstnew((void *)ft_strdup("5"));
 	ft_lstadd_back(&list, elem5);
-	elem6 = ft_lstnew((void *)6);
+	elem6 = ft_lstnew((void *)ft_strdup("6"));
 	ft_lstadd_back(&list, elem6);
 	printf("------ BEFORE: ------\n");
 	print_list(list);
@@ -62,7 +69,7 @@ int	main(void)
 	len = ft_lstsize(list);
 	printf("length = %d\n", len);
 	// Remove the content from elem 3 and free that node
-	ft_lstclear(&elem2, &ft_del);
+	ft_lstiter(elem2, (void *)&ft_change_all_to_o);
 	// Uncomment the following two lines to stop see garbage values
 	// elem3 = NULL;
 	// elem2->next = NULL;

@@ -6,7 +6,7 @@
 #    By: guilhermomasid <guilhermomasid@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/28 16:23:44 by guilhermoma       #+#    #+#              #
-#    Updated: 2022/05/15 12:26:31 by guilhermoma      ###   ########.fr        #
+#    Updated: 2022/05/16 17:53:30 by guilhermoma      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,7 +54,7 @@ BONUS =	ft_lstnew.c			\
 		ft_lstadd_back.c	\
 		ft_lstdelone.c		\
 		ft_lstclear.c		\
-		# ft_lstiter.c		\
+		ft_lstiter.c		\
 		# ft_lstmap.c			\
 
 OBJS = ${SRCS:.c=.o}
