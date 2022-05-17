@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guilhermomasid <guilhermomasid@student.    +#+  +:+       +#+        */
+/*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/06 12:46:29 by guilhermoma       #+#    #+#             */
-/*   Updated: 2022/05/06 14:41:38 by guilhermoma      ###   ########.fr       */
+/*   Created: 2022/05/06 12:46:29 by gmasid            #+#    #+#             */
+/*   Updated: 2022/05/17 12:07:07 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
