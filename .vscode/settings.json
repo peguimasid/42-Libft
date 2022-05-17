@@ -5,6 +5,10 @@
     ".prettierrc": "json",
     "*.tsx": "typescriptreact",
     "atomic": "c",
-    "bitset": "c"
+    "bitset": "c",
+    "__bit_reference": "c",
+    "chrono": "c",
+    "unordered_map": "c",
+    "algorithm": "c"
   }
 }
