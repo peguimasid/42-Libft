@@ -6,7 +6,7 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 21:00:44 by gmasid            #+#    #+#             */
-/*   Updated: 2022/05/17 16:34:31 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/05/21 23:59:40 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,15 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	void	*result;
-
-	result = malloc(count * size);
-	if (!result)
+	void *ptr;
+	if (count == 0 || size == 0)
+	{
+		count = 1;
+		size = 1;
+	}
+	ptr = malloc(count * size);
+	if (!ptr)
 		return (NULL);
-	if (((int)count * (int)size) / count != size)
-		return (NULL);
-	ft_bzero(result, (((int)count) * ((int)size)));
-	return (result);
+	ft_bzero(ptr, count * size);
+	return (ptr);
 }
