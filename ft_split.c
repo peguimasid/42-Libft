@@ -6,7 +6,7 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 14:28:20 by gmasid            #+#    #+#             */
-/*   Updated: 2022/05/22 00:29:24 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/05/22 14:53:26 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,9 +75,9 @@ static void	free_result(char **result, size_t j)
 
 static void	fill_result(char **result, const char *s, char c)
 {
-	size_t i;
-	size_t j;
-	int dup_start_index;
+	size_t	i;
+	size_t	j;
+	int		dup_start_index;
 
 	i = 0;
 	j = 0;
