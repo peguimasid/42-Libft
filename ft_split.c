@@ -6,7 +6,7 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 14:28:20 by gmasid            #+#    #+#             */
-/*   Updated: 2022/05/22 14:53:26 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/05/22 15:00:13 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static int	count_words(const char *str, char c);
 static char	*dup_word(const char *str, int start, int finish);
 static void	free_result(char **result, size_t j);
-static void	fill_result(char **result, const char *s, char c);
+static char	**fill_result(char **result, const char *s, char c);
 
 char	**ft_split(char const *s, char c)
 {
@@ -26,7 +26,7 @@ char	**ft_split(char const *s, char c)
 	result = malloc((count_words(s, c) + 1) * sizeof(char *));
 	if (!result)
 		return (0);
-	fill_result(result, s, c);
+	result = fill_result(result, s, c);
 	return (result);
 }
 
@@ -73,7 +73,7 @@ static void	free_result(char **result, size_t j)
 	free(result);
 }
 
-static void	fill_result(char **result, const char *s, char c)
+static char	**fill_result(char **result, const char *s, char c)
 {
 	size_t	i;
 	size_t	j;
@@ -90,10 +90,14 @@ static void	fill_result(char **result, const char *s, char c)
 		{
 			result[j] = dup_word(s, dup_start_index, i);
 			if (!result[j++])
+			{
 				free_result(result, j);
+				return (NULL);
+			}
 			dup_start_index = -1;
 		}
 		i++;
 	}
 	result[j] = 0;
+	return (result);
 }
