@@ -6,11 +6,29 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 14:28:20 by gmasid            #+#    #+#             */
-/*   Updated: 2022/05/17 12:07:52 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/05/22 00:29:24 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static int	count_words(const char *str, char c);
+static char	*dup_word(const char *str, int start, int finish);
+static void	free_result(char **result, size_t j);
+static void	fill_result(char **result, const char *s, char c);
+
+char	**ft_split(char const *s, char c)
+{
+	char	**result;
+
+	if (!s)
+		return (0);
+	result = malloc((count_words(s, c) + 1) * sizeof(char *));
+	if (!result)
+		return (0);
+	fill_result(result, s, c);
+	return (result);
+}
 
 static int	count_words(const char *str, char c)
 {
@@ -39,23 +57,28 @@ static char	*dup_word(const char *str, int start, int finish)
 	int		i;
 
 	i = 0;
-	word = malloc((finish - start) * sizeof(char));
+	word = malloc((finish - start + 1) * sizeof(char));
 	while (start < finish)
 		word[i++] = str[start++];
 	word[i] = 0;
 	return (word);
 }
 
-char	**ft_split(char const *s, char c)
+static void	free_result(char **result, size_t j)
 {
-	size_t	i;
-	size_t	j;
-	int		dup_start_index;
-	char	**result;
+	while (j--)
+	{
+		free(result[j]);
+	}
+	free(result);
+}
 
-	result = malloc((count_words(s, c) + 1) * sizeof(char *));
-	if (!s || !result)
-		return (0);
+static void	fill_result(char **result, const char *s, char c)
+{
+	size_t i;
+	size_t j;
+	int dup_start_index;
+
 	i = 0;
 	j = 0;
 	dup_start_index = -1;
@@ -65,11 +88,12 @@ char	**ft_split(char const *s, char c)
 			dup_start_index = i;
 		else if ((s[i] == c || i == ft_strlen(s)) && dup_start_index >= 0)
 		{
-			result[j++] = dup_word(s, dup_start_index, i);
+			result[j] = dup_word(s, dup_start_index, i);
+			if (!result[j++])
+				free_result(result, j);
 			dup_start_index = -1;
 		}
 		i++;
 	}
 	result[j] = 0;
-	return (result);
 }
