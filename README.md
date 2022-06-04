@@ -3,8 +3,8 @@
 
 ---
 
-- ### Status: Finished
-- ### Result: 125%
+- Status: Finished
+- Result: 125%
 
 ---
 
