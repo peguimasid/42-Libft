@@ -6,7 +6,7 @@
 #    By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/28 16:23:44 by gmasid            #+#    #+#              #
-#    Updated: 2022/05/17 12:07:52 by gmasid           ###   ########.fr        #
+#    Updated: 2022/06/04 13:30:23 by gmasid           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,3 +79,5 @@ fclean:	clean
 		rm -f ${NAME}
 
 re:		fclean all
+
+.PHONY:	all bonus  clean fclean re
