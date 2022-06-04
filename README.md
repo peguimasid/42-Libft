@@ -22,7 +22,8 @@ git clone https://github.com/peguimasid/42-Libft.git libft
 #include "libft/libft.h"
 #include <stdio.h>
 
-int	main(void) {
+int	main(void)
+{
 	char	*str = "My string";
 	printf("%zu\n", ft_strlen(str));
 }
