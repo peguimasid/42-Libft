@@ -6,12 +6,11 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 15:13:25 by gmasid            #+#    #+#             */
-/*   Updated: 2022/05/17 17:42:43 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/06/04 13:27:11 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <limits.h>
 
 static int	is_space(char c)
 {
